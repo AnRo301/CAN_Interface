@@ -21,7 +21,6 @@ using namespace std;
 void setup() {
 
   Serial.begin(9600);
-  Serial.begin(115200);
 
   Init_AP();    //Init Access Points
 
