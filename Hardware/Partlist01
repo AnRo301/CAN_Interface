@@ -1,0 +1,27 @@
+Partlist
+
+Exported from FuE_Schaltplan18.brd at 28.02.2024 15:56
+
+EAGLE Version 7.7.0 Copyright (c) 1988-2016 CadSoft
+
+Assembly variant: 
+
+Part     Value             Package            Library         Position (mm)         Orientation
+
+C8       100nF             C0805              rcl             (20.5 22.125)         R270
+J1       F-1X22-SIP-100-40 SIP-100-22-40      con-headers-jp  (26.625 28.5)         MR270
+J2       F-1X22-SIP-100-40 SIP-100-22-40      con-headers-jp  (1.625 28.5)          MR90
+JP1                        JP1                jumper          (14.125 12.375)       R180
+JP2                        JP2                jumper          (18.5 7.125)          R180
+JP3                        JP2                jumper          (9.25 7.125)          R180
+LED1     green             CHIP-LED0805       led             (8.875 53)            R0
+LED2     red               CHIP-LED0805       led             (6.75 53)             R0
+LED3     blue              CHIP-LED0805       led             (4.625 53)            R0
+R2       1k                R0805              rcl             (6.75 43.875)         R90
+R3       1k                R0805              rcl             (8.625 39.375)        R90
+R4       1k                R0805              rcl             (4.625 48.5)          R90
+R14      120               R0805              rcl             (9.25 16.25)          R270
+R21      10k               R0805              rcl             (19.875 16.25)        R0
+U1       SN65HVD230D       SOIC127P599X175-8N SN65HVD230D     (14.125 21.625)       R180
+X1                         2POL254            con-phoenix-254 (14.125 2.5)          R180
+X3                         F09VP              con-subd        (16.375 41.125)       R270
