@@ -23,8 +23,7 @@ Within the scope of this project, a circuit board is to be developed, which is a
   
 ##
 
-##
+![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/86362c21-a6dc-4350-b065-2b70edaa49b3)
 
-![image](https://github.com/AnRo301/CAN_Interface/assets/150276417/35fd88c8-c0c2-4f52-8a07-821595b4a3cb)
 
 
