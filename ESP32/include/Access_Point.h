@@ -13,14 +13,6 @@
 
 using namespace std;
 
-//const char* PARAM_FLOAT = "inputFloat";
-
-//const char* ssid = "CAN2WLAN";
-// AsyncWebServer server(80);
-// AsyncWebSocket ws("/ws");
-// WiFiUDP udp;
-
-
 /* --------------------- Definitions and static variables ------------------ */
 
 typedef struct {
