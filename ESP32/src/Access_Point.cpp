@@ -210,37 +210,6 @@ void BroadcastUDP(std::vector<uint8_t> data, size_t len) {
 }
 
 
-// void sendRandCANData() {
-
-//   CANFrame canFrame = Rand_CAN_Frame();
-
-//   std::vector<uint8_t> canFrameVec = CANFrame_to_Vec(canFrame);
-//   String canFrameString = CANFrame_to_JSON(canFrame);
-      
-//   size_t canFrameLen = canFrameVec.size();
-
-//   BroadcastUDP(canFrameVec, canFrameLen);
-//   ws.textAll(canFrameString);
-
-//   delay(400);
-// }
-
-// void sendReceivedCANData(CANFrame canFrame) {
-
-//   //CANFrame canFrame = Rand_CAN_Frame();
-
-//   std::vector<uint8_t> canFrameVec = CANFrame_to_Vec(canFrame);
-//   String canFrameString = CANFrame_to_JSON(canFrame);
-      
-//   size_t canFrameLen = canFrameVec.size();
-
-//   BroadcastUDP(canFrameVec, canFrameLen);
-//   ws.textAll(canFrameString);
-
-//   delay(400);
-// }
-
-
 String readFile(fs::FS &fs, const char * path){
   Serial.printf("Reading file: %s\r\n", path);
   File file = fs.open(path, "r");
@@ -287,35 +256,6 @@ String processor(const String& var){
   return String();
 }
 
-//uint8_t Receive_ws(){
-  
-//  ws.onEvent(onWsEvent);
-
-
-
-//  uint8_t value = 0;
-
-//   ws.onEvent([](AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len){
-  
-//     if(type == WS_EVT_DATA){
- 
-//       Serial.print("Data received: ");
- 
-//       for(int i=0; i < len; i++) {
-//           Serial.print((char) data[i]);
-//           //value[i] = ((char) data[i]);
-//       }
-//       Serial.println();
-
-//       return data;
-//     }
-
-//  });
-
-
-
-//}
-
 uint8_t combineDigits(uint8_t num1, uint8_t num2) { // Die letzten 4 Bits jeder Zahl extrahieren 
     uint8_t last4BitsNum1 = num1 & 0x0F; 
     uint8_t last4BitsNum2 = num2 & 0x0F; // Die letzten 4 Bits von num1 nach links verschieben und mit den letzten 4 Bits von num2 kombinieren 
@@ -328,10 +268,11 @@ void WS_Handling(){
   
     if(type == WS_EVT_DATA){
 
-      if(data[0]==0x00 && data[1]== 0x00 && data[2]== 0x00 && data[3]== 0x00 && data[4]== 0x00 && data[5]== 0x00 && data[6]== 0x00 && data[7]==0x00){
-        Serial.begin(Baudrate_initial);
-        printf("\nResetSpeed\n");
-      }else if(data[0] == 'X'){
+      //if(data[0]==0x00 && data[1]== 0x00 && data[2]== 0x00 && data[3]== 0x00 && data[4]== 0x00 && data[5]== 0x00 && data[6]== 0x00 && data[7]==0x00){
+        //Serial.begin(Baudrate_initial);
+        //printf("\nResetSpeed\n");
+      //}else if(data[0] == 'X'){
+      if(data[0] == 'X'){
         printf("\nSend CAN Frame:");
         printf("\nFirstSign : X\n");
 
@@ -559,105 +500,17 @@ void WS_Handling(){
         twai_transmit_task(message);
 
       } else{
-
-      
-
       Serial.print("Data received: ");
       printf("Length: ");
       printf("%08d\n", len);
 
       for(int i=0; i < len; i++) {
           Serial.print((char) data[i]);
-          //value(i) = ((char) data[i]);
-          //b_read.push_back(data[i]);
           b_read[8 - len + i] = data[i];
       }
 
-      for (int j = 0; j < (8 - len); j++)
-      {
-        b_read[j] = 0x00;
-      }
+      Change_CAN_Speed(data);
 
-      Serial.println();
-
-      cout << data[0] << data[1] << data[2] << data[3] << data[4] << data[5] << data[6] << data[7] << endl; 
-      cout << b_read[0] << b_read[1] << b_read[2] << b_read[3] << b_read[4] << b_read[5] << b_read[6] << b_read[7] << endl;
-
-      uint8_t digit0 = b_read[0]; 
-      uint8_t digit1 = b_read[1]; 
-      uint8_t digit2 = b_read[2]; 
-      uint8_t digit3 = b_read[3]; 
-      uint8_t digit4 = b_read[4]; 
-      uint8_t digit5 = b_read[5]; 
-      uint8_t digit6 = b_read[6]; 
-      uint8_t digit7 = b_read[7];
-
-      uint8_t combined1 = combineDigits(digit0, digit1);
-      uint8_t combined2 = combineDigits(digit2, digit3);
-      uint8_t combined3 = combineDigits(digit4, digit5);
-      uint8_t combined4 = combineDigits(digit6, digit7);
-
-      cout << "Die kombinierten Zahlen sind: 0x" << hex << static_cast<uint16_t>(combined1) << endl; 
-      cout << "Die kombinierten Zahlen sind: 0x" << hex << static_cast<uint16_t>(combined2) << endl; 
-      cout << "Die kombinierten Zahlen sind: 0x" << hex << static_cast<uint16_t>(combined3) << endl; 
-      cout << "Die kombinierten Zahlen sind: 0x" << hex << static_cast<uint16_t>(combined4) << endl; 
-
-      vector<uint8_t> Baudrate_read_vector = {combined1, combined2, combined3, combined4};
-      int Baudrate_read_int = convertVectorToInt(Baudrate_read_vector); 
-      cout << "Converted int value dez: " << Baudrate_read_int << endl;
-
-      cout << Baudrate_read_int << endl;
-      cout << hex << Baudrate_read_int << endl;
-      cout << dec << Baudrate_read_int << endl;
-
-      //printf("%10d", Baudrate_read_int);
-
-      if(Baudrate_read_int == 115200){
-        printf("isequal to 115200\n");
-      } else if(Baudrate_read_int == 1135104){
-        printf("is equal to 1135104\n");
-      } else if(Baudrate_read_int%1000000 == 115200){
-        printf("proz115200");
-      } else if(Baudrate_read_int%1000000 == 1135104){
-        printf("proz1135..");
-      }else if(Baudrate_read_int%1000000 == 00115200){
-        printf("00115200\n");
-      }else if(Baudrate_read_int%1000000 == 01135104){
-        printf("01135...\n");
-      }
-
-      string nrString = to_string(Baudrate_read_int);
-      int length = nrString.length();
-      cout << nrString << "---Length: " << length << endl;
-
-      vTaskDelay(1000);
-
-        int Baudrate_read_int_dec = ConvertHexToInt(Baudrate_read_int);
-
-        if (Baudrate_set == Baudrate_read_int_dec)
-        {
-          printf("Baudrate set und Baudrate read int dec are similar\n");
-          printf("%8d\n", Baudrate_set);
-          printf("%8d\n", Baudrate_read_int_dec);
-          printf("%8x\n", Baudrate_set);
-          printf("%8x\n", Baudrate_read_int_dec);
-      }
-
-      if (Baudrate_set != Baudrate_read_int_dec)
-      {
-          // Serial.print("*** Your inputInt: ");
-          // Serial.println(Baudrate);
-          printf("***Your Input File: ");
-          printf("%08d\n", Baudrate_read_int);
-          printf("%08x\n", Baudrate_read_int);
-
-          vTaskDelay(1000);
-
-          Baudrate_set = Change_Baudrate(Baudrate_read_int_dec);
-
-          printf("%08x\n", Baudrate_set);
-          cout << Baudrate_set << endl;
-      }
       }
 
     }

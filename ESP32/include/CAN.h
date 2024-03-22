@@ -13,6 +13,7 @@ void twai_receive_task();
 void twai_transmit_task(twai_message_t message);
 
 int Change_Baudrate(int baudrate_r);
+void Change_CAN_Speed(uint8_t *data);
 
 int convertVectorToInt(const vector<uint8_t>& vec);
 int convertVectorToUInt32(const vector<uint8_t> &vec);
