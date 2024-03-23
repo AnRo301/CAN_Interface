@@ -5,7 +5,7 @@
 /* --------------------- Definitions and static variables ------------------ */
 
 WiFiUDP udp;
-const char *ssid = "CAN2WLAN_Module2";
+const char *ssid = "CAN2WLAN";
 AsyncWebServer server(80);
 AsyncWebSocket socket("/ws");
 

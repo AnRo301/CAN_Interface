@@ -64,10 +64,10 @@ void twai_receive_task()
     uint8_t a = message.identifier & 0xFF;          //d
     
     vector<uint8_t> identifier = {
-         static_cast<uint8_t>(a),
-         static_cast<uint8_t>(b),
+         static_cast<uint8_t>(d),
          static_cast<uint8_t>(c),
-         static_cast<uint8_t>(d)};
+         static_cast<uint8_t>(b),
+         static_cast<uint8_t>(a)};
 
      vector<uint8_t> frameLength = {message.data_length_code};
 
