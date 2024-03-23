@@ -42,7 +42,6 @@ Software:
   (A terminating resistor of 120 ohms is added between CAN High and CAN Low via JP1)
   
 ![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/f7500303-a46a-465a-b11c-933e14cc1207)
-
 - Connect ESP32-S3 via USB-C COM Port to the pc
 - Install extension packages mentioned in 'Third Party Components' in VS Code
 - Build and upload the Code with PlatformIO
