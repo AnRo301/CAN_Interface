@@ -41,7 +41,8 @@ Software:
 - Depending on the type of connection to the CAN bus (Subd or jumper cables) connect the pin headers via jumpers according to the following picture
   (A terminating resistor of 120 ohms is added between CAN High and CAN Low via JP1)
   
-![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/01a459c8-6b94-4047-8147-8d6eaf9117c7)
+![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/6d544891-a33b-4d02-ab44-b19153cef0a8)
+
 
 - Connect ESP32-S3 to the USB port, select the corresponding board and port
 - Install extension packages mentioned in 'Third Party Components'
@@ -49,10 +50,8 @@ Software:
 - Connect any device to the Wifi "CAN2WLAN" provided by the ESP32 acting as an access points
 - Type in the following IP-Adresse in a browser: 192.168.4.1
 - The following user interface should now appear:
-![Benutzeroberfläche03](https://github.com/AnRo301/CAN_Interface/assets/150276417/ddb95fc1-db53-44fe-9168-908b1346a2e3)
-
-Warning: Only certain CAN speeds are possible: 25KBit/s, 50KBit/s, 100KBit/s, 125KBit/s, 250KBit/s, 500KBit/s, 800KBit/s, 1MBit/s
-
+![Benutzeroberfläche04](https://github.com/AnRo301/CAN_Interface/assets/150276417/231b8824-15e4-481b-9b42-b46373a9d348)
+ 
 Warning: Messages needs to be typed in in the right format. No detection for wrong/ unplausible input is implemented !
 
 
