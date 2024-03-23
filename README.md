@@ -50,7 +50,8 @@ Software:
 - Type in the following IP-Adresse in a browser: 192.168.4.1
 - The following user interface should now appear:
   
-![Benutzeroberfläche04](https://github.com/AnRo301/CAN_Interface/assets/150276417/231b8824-15e4-481b-9b42-b46373a9d348)
+![Benutzeroberfläche04](https://github.com/AnRo301/CAN_Interface/assets/150276417/685017a7-eac6-4eed-99bb-d03fd8f2448e)
+
  
 Warning: Messages needs to be typed in in the right format. No detection for wrong/ unplausible input is implemented !
 
