@@ -43,10 +43,10 @@ Software:
   
 ![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/f7500303-a46a-465a-b11c-933e14cc1207)
 
-- Connect ESP32-S3 to the USB port, select the corresponding board and port
-- Install extension packages mentioned in 'Third Party Components'
+- Connect ESP32-S3 via USB-C COM Port to the pc
+- Install extension packages mentioned in 'Third Party Components' in VS Code
 - Build and upload the Code with PlatformIO
-- Connect any device to the Wifi "CAN2WLAN" provided by the ESP32 acting as an access points
+- Connect any device to the Wifi "CAN2WLAN" provided by the ESP32 acting as an access point
 - Type in the following IP-Adresse in a browser: 192.168.4.1
 - The following user interface should now appear:
   
