@@ -41,8 +41,7 @@ Software:
 - Depending on the type of connection to the CAN bus (Subd or jumper cables) connect the pin headers via jumpers according to the following picture
   (A terminating resistor of 120 ohms is added between CAN High and CAN Low via JP1)
   
-![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/6d544891-a33b-4d02-ab44-b19153cef0a8)
-
+![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/f7500303-a46a-465a-b11c-933e14cc1207)
 
 - Connect ESP32-S3 to the USB port, select the corresponding board and port
 - Install extension packages mentioned in 'Third Party Components'
