@@ -42,9 +42,14 @@ Software:
   (A terminating resistor of 120 ohms is added between CAN High and CAN Low via JP1)
   
 ![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/f7500303-a46a-465a-b11c-933e14cc1207)
-- Connect ESP32-S3 via USB-C COM Port to the pc
 - Install extension packages mentioned in 'Third Party Components' in VS Code
+- Connect ESP32-S3 via USB-C Port to the pc
+- Build and Upload Filesystem Image with PlatformIO
+- Connect ESP32-S3 via USB-C COM Port to the pc
 - Build and upload the Code with PlatformIO
+  
+![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/908f60f0-e017-4397-8bf2-91b2fb13fa51)
+
 - Connect any device to the Wifi "CAN2WLAN" provided by the ESP32 acting as an access point
 - Type in the following IP-Adresse in a browser: 192.168.4.1
 - The following user interface should now appear:
