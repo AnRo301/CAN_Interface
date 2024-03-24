@@ -29,16 +29,22 @@ function populateTable(){
 
 ws.onopen = function(event) {
     console.log('WebSocket connection opened:', event);
-    document.getElementById("inputInt").disabled = false;
-    document.getElementById("sendButton").disabled = false;
-    document.getElementById("ResetSpeed").disabled = false;
+
+    document.getElementById("Speed").disabled = false;
+    document.getElementById("sendTable").disabled = false;
+    document.getElementById("sendId").disabled = false;
+    document.getElementById("sendFrameLength").disabled = false;
+    document.getElementById("sendData").disabled = false;
+    document.getElementById("sendExtendedFlag").disabled = false;
+    document.getElementById("sendRtrFlag").disabled = false;
+    document.getElementById("canTable").disabled = false;
 };
 
 ws.onmessage = function(event) {
     console.log('WebSocket message received:', event.data);
 
     try {
-        const canData = JSON.parse(event.data);
+        const canData = JSON.parse(event.data); 
         
         canFrames.unshift(canData);
 
@@ -51,8 +57,15 @@ ws.onmessage = function(event) {
 
 ws.onclose = function(event) {
     console.log('WebSocket connection closed:', event);
-    document.getElementById("inputInt").disabled = true;
-    document.getElementById("sendButton").disabled = true;
+    
+     document.getElementById("Speed").disabled = true;
+    document.getElementById("sendTable").disabled = true;
+    document.getElementById("sendId").disabled = true;
+    document.getElementById("sendFrameLength").disabled = true;
+    document.getElementById("sendData").disabled = true;
+    document.getElementById("sendExtendedFlag").disabled = true;
+    document.getElementById("sendRtrFlag").disabled = true;
+    document.getElementById("canTable").disabled = true;
 };
 
 ws.onerror = function(event) {
@@ -89,19 +102,19 @@ function exportToXML() {
     document.body.removeChild(a);
 }
 
-function configureCAN() {
-    // Retrieve values from the input fields and configure CAN communication
-    var canSpeed = document.getElementById('canSpeed').value;
-    var filter = document.getElementById('filter').value;    
+// function configureCAN() {
+//     // Retrieve values from the input fields and configure CAN communication
+//     var canSpeed = document.getElementById('canSpeed').value;
+//     var filter = document.getElementById('filter').value;    
 
-    // Perform necessary actions with the configured values
-    console.log('Configuring CAN with Speed:', canSpeed, 'and Filter:', filter);
-}
+//     // Perform necessary actions with the configured values
+//     console.log('Configuring CAN with Speed:', canSpeed, 'and Filter:', filter);
+// }
 
-function submitMessage() {
-    alert("Saved value to ESP SPIFFS");
-    setTimeout(function(){ document.location.reload(false); }, 500);
-}
+// function submitMessage() {
+//     alert("Saved value to ESP SPIFFS");
+//     setTimeout(function(){ document.location.reload(false); }, 500);
+// }
 
 
 function sendCANFrame() {
@@ -121,10 +134,10 @@ function CloseWebsocket() {
     ws.close();
 }
 
-function SendData() {
-    var textToSend = document.getElementById("inputInt").value;
-    ws.send(textToSend);
-}
+// function SendData() {
+//     var textToSend = document.getElementById("inputInt").value;
+//     ws.send(textToSend);
+// }
 
 function Config_Speed() {
     var Speed = document.getElementById("Speed");
@@ -132,9 +145,9 @@ function Config_Speed() {
     ws.send(SpeedtoSend);
 }
 
-function ResetSpeed() { 
-    var reset = 0;
-    ws.send(reset);
-}
+// function ResetSpeed() { 
+//     var reset = 0;
+//     ws.send(reset);
+// }
 
 
