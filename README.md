@@ -48,7 +48,7 @@ Software:
 - Connect ESP32-S3 via USB-C COM Port to the pc
 - Build and upload the Code with PlatformIO
   
-![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/908f60f0-e017-4397-8bf2-91b2fb13fa51)
+![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/e19d3fc5-d2b9-4a7d-94d6-edb0c335d542)
 
 - Connect any device to the Wifi "CAN2WLAN" provided by the ESP32 acting as an access point
 - Type in the following IP-Adresse in a browser: 192.168.4.1
