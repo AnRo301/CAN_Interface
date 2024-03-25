@@ -58,7 +58,7 @@ ws.onmessage = function(event) {
 ws.onclose = function(event) {
     console.log('WebSocket connection closed:', event);
     
-     document.getElementById("Speed").disabled = true;
+    document.getElementById("Speed").disabled = true;
     document.getElementById("sendTable").disabled = true;
     document.getElementById("sendId").disabled = true;
     document.getElementById("sendFrameLength").disabled = true;
@@ -102,21 +102,6 @@ function exportToXML() {
     document.body.removeChild(a);
 }
 
-// function configureCAN() {
-//     // Retrieve values from the input fields and configure CAN communication
-//     var canSpeed = document.getElementById('canSpeed').value;
-//     var filter = document.getElementById('filter').value;    
-
-//     // Perform necessary actions with the configured values
-//     console.log('Configuring CAN with Speed:', canSpeed, 'and Filter:', filter);
-// }
-
-// function submitMessage() {
-//     alert("Saved value to ESP SPIFFS");
-//     setTimeout(function(){ document.location.reload(false); }, 500);
-// }
-
-
 function sendCANFrame() {
     var ID = document.getElementById("sendId").value;
     var sendFrameLength = document.getElementById("sendFrameLength").value;
@@ -134,10 +119,6 @@ function CloseWebsocket() {
     ws.close();
 }
 
-// function SendData() {
-//     var textToSend = document.getElementById("inputInt").value;
-//     ws.send(textToSend);
-// }
 
 function Config_Speed() {
     var Speed = document.getElementById("Speed");
@@ -145,9 +126,6 @@ function Config_Speed() {
     ws.send(SpeedtoSend);
 }
 
-// function ResetSpeed() { 
-//     var reset = 0;
-//     ws.send(reset);
-// }
+
 
 
