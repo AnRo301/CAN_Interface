@@ -7,7 +7,7 @@ ESP32-Development-Boards contain powerful and inexpensive 32-bit microcontroller
 CAN is a popular communication protocol in the automotive sector. It is a reliable and robust protocol which is designed for high-speed data transmission and real-time applications.
 Although the microcontrollers have both CAN and Ethernet controllers integrated, there are currently no inexpensive boards available that provide an interface for the CAN bus.
 
-Within the scope of this project, a circuit board is to be developed, which is an interface between an ESP32 board and the CAN bus.
+Within this project, a circuit board is developed, which provides an interface between an ESP32 board and the CAN bus.
 
 
 ## Features
