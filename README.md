@@ -36,7 +36,7 @@ Software:
 ## How to run the project?
 - Connect CAN Bus module to ESP32-S3 (pin labels must match)
 ![grafik](https://github.com/AnRo301/CAN_Interface/assets/150276417/86362c21-a6dc-4350-b065-2b70edaa49b3)
-- Connect the CAN Bus either via SubD cable or via twisted pair of jumper cables (Pin Header: H (CAN High), L (CAN Low))
+- Connect to the CAN Bus either via SubD cable or via twisted pair of jumper cables (Pin Header: H (CAN High), L (CAN Low))
 - Depending on the type of connection to the CAN bus (Subd or jumper cables) connect the pin headers via jumpers according to the following picture
   (A terminating resistor of 120 ohms is added between CAN High and CAN Low via JP1)
   
