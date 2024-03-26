@@ -3,10 +3,9 @@
 ## Introduction
 
 ESP32-Development-Boards contain powerful and inexpensive 32-bit microcontrollers and are well known for their low energy consumption. Due to their open design, the modules enable to connect network-based actuators and sensors.
-Although the microcontrollers have both CAN and Ethernet controllers integrated, there are currently no low-cost boards available that provide an interface for the CAN-Bus.
 
 CAN is a popular communication protocol in the automotive sector. It is a reliable and robust protocol which is designed for high-speed data transmission and real-time applications.
-Although the microcontrollers have both CAN and Ethernet controllers integrated, there are currently no inexpensive boards available that provide an interface for the CAN bus used in all vehicles.
+Although the microcontrollers have both CAN and Ethernet controllers integrated, there are currently no inexpensive boards available that provide an interface for the CAN bus.
 
 Within the scope of this project, a circuit board is to be developed, which is an interface between an ESP32 board and the CAN bus.
 
