@@ -56,7 +56,7 @@ Software:
 ![Benutzeroberfläche04](https://github.com/AnRo301/CAN_Interface/assets/150276417/685017a7-eac6-4eed-99bb-d03fd8f2448e)
 
  
-Warning: Messages needs to be typed in in the right format. No detection for wrong/ unplausible input is implemented !
+Warning: Messages needs to be typed in in the right format. No detection of wrong/ unplausible input is implemented !
 
 
 
