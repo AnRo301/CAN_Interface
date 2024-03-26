@@ -15,7 +15,7 @@ Within this project, a circuit board is developed, which provides an interface b
 - Send and receive CAN Messages according to ISO11898-1
 - Standard and extended frame format supported
 - Various bus speeds supported
-- Acts as a wireless access point
+- Acts as a WLAN access point
 - Received CAN messages are forwarded via web socket and can be viewed via a web interface on any device that is connected to the provided network
 - Messages that are to be sent via the bus can be entered using the web interface and are transmitted via web socket to the microcontroller, which initiates the sending via CAN Bus
 
